@@ -1,0 +1,72 @@
+
+@import url(reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;500&family=Pacifico&display=swap");
+
+.header {
+    padding-top: 50px;  
+  background-color: #000;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.path {
+  fill: none;
+  stroke: #f2f2f2;
+  stroke-width: 2px;
+}
+
+.path1 {
+  stroke-dasharray: 6884;
+  animation: drawPath1 1s linear, floating 2.2s linear infinite;
+}
+.path__item{
+    fill: none;
+    stroke: #f2f2f2;
+    stroke-width: 3px;
+    stroke-dasharray:0;
+    stroke-dashoffset:0;
+}
+.content1 {
+  background-color: #f1f1f1;
+}
+
+.content2 {
+  background-color: #000;
+}
+
+.path2 {
+  stroke: #000;
+}
+
+.content2 {
+  background-image: repeating-linear-gradient(0deg, rgba(255,255,255, 0.25), rgba(255,255,255, 0.25) 1px, transparent 1px, transparent 7px);
+    background-size: 2px;
+}
+
+.content3 {
+    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+.footer {
+  height: 30vh;
+  background-color: #000;
+}
+
+@keyframes drawPath1 {
+  0% {
+    stroke-dashoffset: 6884;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes floating {
+  50% {
+    transform: translate3d(0, 40px, 0);
+  }
+}
+
+/* css for my tutorial channel link */
+#tube {position: fixed; bottom: 1vw; right: 1vw; opacity: 0.4;}
+#tube:hover { opacity: 1; } #tube >img { height: 3rem; }
