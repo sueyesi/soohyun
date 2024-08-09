@@ -125,3 +125,11 @@ textarea:not([rows]) {
 :target {
     scroll-margin-block: 5ex;
 }
+/*focus-visible*/
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(179, 179, 180, 0.56);
+}
+.button:focus:not(:focus-visible) {
+  box-shadow: none;
+}

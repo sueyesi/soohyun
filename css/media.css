@@ -1,0 +1,36 @@
+
+@media all and (min-width:1400px) {
+    .main__container .article{
+        height: 100vh;
+    }
+    body{        
+        font-size: 18px;
+        border: 1px solid #ed3107;
+    }
+    
+}
+/* PC (해상도 1024px)*/ 
+@media all and (max-width:1399px) {
+    body{        
+        font-size: 18px;
+        border: 1px solid #d6ed07;
+    }    
+    
+} 
+
+
+
+/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
+@media all and (min-width:480px) and (max-width:767px) {
+    body{
+        border: 1px solid #de0eb1;
+    }
+} 
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
+@media all and (max-width:479px) {
+    body{
+        font-size: 12px;
+        border: 1px solid #dec20e;
+    }
+}
