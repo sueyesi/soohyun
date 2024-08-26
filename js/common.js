@@ -334,16 +334,39 @@ ScrollOut({
   });
 //textEvent
 new TypeIt("#simpleUsage", {
-    strings: "soo hyun",
+    strings: "sueyesi_Soo Hyun",
     speed: 50,
     waitUntilVisible: true,
 }).go();
 
-new TypeIt("#endText", {
-    strings: "Thank You!",
-    speed: 50,
+new TypeIt("#contactTyped", {    
+    speed: 60,
+	loop:true,
     waitUntilVisible: true,
-}).go();
+})
+.pause(1500)	
+.type("내")
+.pause(48)
+.type("가")
+.pause(53)
+.type(" ")
+.pause(1256)
+.delete(1)
+.pause(71)
+.delete(1)
+.pause(82)
+.delete(1)
+.pause(410)
+.type(" 하고 싶고")
+.pause(59)
+.type(", ")
+.pause(409)
+.type("할 수 있는 것에 ")
+.pause(209)
+.break()
+.type("집중하라")
+.pause(2809)
+.go();
 
 // gsap animations & ScrollTriggers
 gsap.registerPlugin(ScrollTrigger);
@@ -353,44 +376,35 @@ gsap.fromTo('.portfolio', {
 	width: 0,
 	height:0,
 	scrub: 4,
-	ease:'elastic',	
-	},{
-		width: 2500,
-		height:2500,
-		scrollTrigger: {
-			trigger: ".ani__area",
-			start: "top top", 
-			end:"80% 50%",
-			pin: true,
-			scrub: 1,
-			ease:'elastic',				
+	ease:'elastic',	},
+	{
+	width: 2500,
+	height:2500,
+	scrollTrigger: {
+	trigger: ".work__area",
+	start: "top top", 
+	end:"80% 50%",
+	pin: true,
+	scrub: 1,
+	ease:'elastic',				
 	},
-  });
-//work
+});
+//project list
 $(function(){
-	$('.animate').scrolla({
-		mobile : true,
-		once : false
-	});
-});  
-//work img
-$(function(){
-	gsap.registerPlugin(ScrollTrigger);
-
 	ScrollTrigger.matchMedia({
-		'(min-width:1024px)' : function(){
-			//가로
-			let list = gsap.utils.toArray('.project ul li');
-			let scrollTween = gsap.to(list, {
-				xPercent : -100 * (list.length -1), // 전체 갯수에 -1뺀 후 가로이동
+		//pc
+		"(min-width:993px)" : function(){			
+			
+			let projectList = gsap.utils.toArray('.project ul li');
+			let scrollTween = gsap.to(projectList, {
+				xPercent : -100 * (projectList.length - 1), // 전체 갯수에 -1뺀 후 가로이동
 				ease : 'none',  //가속
 				scrollTrigger:{
 					trigger:'.project',
 					pin:true, //고정
-					scrub:1, 
+					scrub:1,
 					start:'center center',
-					end : '200%', // 숫자가 클수록 느려진다.(뷰포트 높이의 %)
-					//markers:true
+					end : '280%' // 숫자가 클수록 느려진다.(뷰포트 높이의 %)
 				}  
 			});
 			//img 모션
@@ -402,23 +416,22 @@ $(function(){
 						containerAnimation : scrollTween,
 						start:'center right',
 						end : 'center center',
-						scrub:1,
-						//markers:true
+						markers:false,						
+						scrub: true
 					}
 				})
-				.to(imgBox, {'clip-path':'inset(0%)','opacity':'1',ease:'none',duration:1,}, 0)
+				.to(imgBox, {'clip-path':'inset(0%)',ease:'none',duration:1}, 0)
 				//imgBox 중앙에서 작아지는 애니메이션 중앙-> 왼쪽에서 종료
 				gsap.timeline({
 					scrollTrigger:{
 						trigger:imgBox,
 						containerAnimation : scrollTween,
 						start:'center center',
-						end : 'center left',
-						scrub:true,
-						markers:true
+						end : 'center left',						
+						scrub:true
 					}
 				})
-				.to(imgBox, {'clip-path':'inset(30%)','opacity':'0',ease:'none',duration:1,}, 0)
+				.to(imgBox, {'clip-path':'inset(30%)',ease:'none',duration:1}, 0)
 			}); //imgBox End
 
 			//text 모션
@@ -431,10 +444,11 @@ $(function(){
 						start:'center 70%',
 						end : 'center 40%',
 						scrub:true,
-						//markers:true
+						markers:false
 					}
 				})
-				.to(textBox, {'opacity':'1','x':-100}, 0)
+				.to(textBox, {'opacity':'1','y':-10}, 0)
+				.to('.project__link',{'opacity':'1'})
 				//text 중앙에서 작아지는 애니메이션 중앙-> 왼쪽에서 종료
 				gsap.timeline({
 					scrollTrigger:{
@@ -442,24 +456,305 @@ $(function(){
 						containerAnimation : scrollTween,
 						start:'center 30%',
 						end : 'center 20%',
-						scrub:true,
-						//markers:true
+						scrub:true					
 					}
 				})
-				.to(textBox, {'opacity':'0','x':100}, 0)
-			}); //text End
+				.to(textBox, {'opacity':'0','y':10}, 0)
+			}); //text End				
+		},
+		//end pc
+		// start tablet
+		"(min-width: 768px) and (max-width: 1023px)":function(){
+	
+			
+		},
+		//end tablet
+
+		// start mobile
+		"(min-width: 320px) and (max-width: 767px)":function(){
+	
+			
 		}
+		//end mobile
 	})
-});   
+});
+
+//스크롤 애니메이션 액션
+$(function(){
+	// 마지막 섹션에서 스크롤 방향 바꾸기
+	let filterC = 'invert(97%) sepia(48%) saturate(2%) hue-rotate(19deg) brightness(113%) contrast(100%)' ;	
+	let scrollMark = gsap.timeline({
+		scrollTrigger: {
+			trigger: "#section__4",
+			start: "top bottom", 
+			end:"50% 50%",
+			scrub: 1,
+			markers: false
+		}	
+	});
+	scrollMark.to(".scroll__mark", {rotate: 180,filter:filterC, duration: 2});		
+	scrollMark.to(".scroll__mark span", {display:'block', duration: 2});	
+	//window top이동
+	let scrollTop = document.querySelector(".scroll__mark span");
+	scrollTop.addEventListener("click", () => {
+		gsap.to(window, {duration: 2, scrollTo: {y: 0}});
+	});
+
+});
+//contact 아이콘 화면 
+$(function(){	
+		
+	const iconMotion = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".content",
+			start: "80% 90%", 
+			end:"100% 50%",
+			scrub: 1,
+			markers: false
+		}	
+	});	
+	
+	const pGroup = document.querySelector(".contact__txt p");
+	const emailDiv = document.querySelector(".contact__txt .email");
+	const exDiv = document.querySelector(".contact__txt .ex");
+	const chDiv = document.querySelector(".contact__txt .ch");
+	const psDiv = document.querySelector(".contact__txt .ps");
+	const aiDiv = document.querySelector(".contact__txt .ai");
+	const fzDiv = document.querySelector(".contact__txt .fz");
+	const vsDiv = document.querySelector(".contact__txt .vs");
+	const typedDiv = document.querySelector(".contact__txt .contact__typed");
+
+	document.getElementById("email").onclick = () => {		
+
+		
+        if (emailDiv.style.display == "none" || emailDiv.style.display == "") {
+			emailDiv.style.display = "flex"; 
+            chDiv.style.display = "none";
+			psDiv.style.display = "none";
+			typedDiv.style.display = "none";
+			aiDiv.style.display = "none";
+			//2.해상도별
+			ScrollTrigger.matchMedia({
+				"(min-width: 1400px)":function(){					
+					gsap.fromTo(emailDiv, {opacity: 0,'font-size':'1rem',}, {duration: 0.5, opacity: 1,'font-size':'3rem',}); // 부드럽게 나타나게 함
+					gsap.fromTo(".email .ani", 
+					{
+						duration: 1,
+						x:0,	
+						y:580,
+						transformOrigin: "10% 10%",
+					},
+					{
+						duration: 3,
+						x:'0%',	
+						y: 0,
+						transformOrigin: "50% 50%",
+						ease: "elastic",
+						'width':'200px',
+						'height':'200px',
+						yoyo: true,				
+						stagger: 0.01
+					}); 
+					
+
+				},//1200
+				"(min-width: 1024px) and (max-width: 1400px)":function(){
+					gsap.fromTo(emailDiv, {opacity: 0,'font-size':'4rem',}, {duration: 0.5, opacity: 1,'font-size':'2.2rem',}); // 부드럽게 나타나게 함
+					gsap.fromTo(".email .ani", 
+					{
+						duration: 1,
+						x:'0',	
+						y:580,
+						transformOrigin: "10% 10%",
+					},
+					{
+						duration: 3,
+						x:'6%',	
+						y: 0,
+						transformOrigin: "50% 50%",
+						ease: "elastic",				
+						stagger: 0.01
+					});	
+					
+				},
+				"(min-width: 768px) and (max-width: 1023px)":function(){
+					gsap.fromTo(emailDiv, {opacity: 0,'font-size':'4rem',}, {duration: 0.5, opacity: 1,'font-size':'1.5rem',}); // 부드럽게 나타나게 함
+					gsap.fromTo(".email .ani", 
+					{
+						duration: 1,
+						x:'0',	
+						y:580,
+						transformOrigin: "10% 10%",
+					},
+					{
+						duration: 3,
+						x:'4%',	
+						y: 0,
+						transformOrigin: "50% 50%",
+						ease: "elastic",				
+						stagger: 0.01
+					});	
+					
+				},
+				"(max-width: 767px)":function(){
+					gsap.fromTo(emailDiv, {opacity: 0,'font-size':'4rem',}, {duration: 0.5, opacity: 1,'font-size':'1rem',}); // 부드럽게 나타나게 함
+					gsap.fromTo(".email .ani", 
+					{
+						duration: 1,
+						x:'0',	
+						y:580,
+						transformOrigin: "10% 10%",
+					},
+					{
+						duration: 3,
+						x:'4%',	
+						y: 0,
+						transformOrigin: "50% 50%",
+						'width':'100px',
+						'height':'100px',
+						ease: "elastic",				
+						stagger: 0.01
+					});	
+					
+				},
+				"(max-width: 640px)":function(){
+					gsap.fromTo(emailDiv, {opacity: 0,'font-size':'4rem',}, {duration: 0.5, opacity: 1,'font-size':'1rem',}); // 부드럽게 나타나게 함
+					gsap.fromTo(".email .ani", 
+					{
+						duration: 1,
+						x:'0',	
+						y:580,
+						transformOrigin: "10% 10%",
+					},
+					{
+						duration: 1,
+						x:'4%',	
+						y: 0,
+						transformOrigin: "50% 50%",
+						'width':'50px',
+						'height':'50px',
+						ease: "elastic",				
+						stagger: 0.01
+					});	
+					
+				}
+
+			});
+			//2.		
+			}else {
+				gsap.to(emailDiv, {duration:0.5, onComplete: () => {
+					emailDiv.style.display = "none"; // 애니메이션이 끝난 후 숨김
+					typedDiv.style.display = "flex";
+				}});				
+			}
+	};// 
+	
+	document.getElementById("ch").onclick = () => {	
+		if (chDiv.style.display == "none" || chDiv.style.display == "") {
+			chDiv.style.display = "flex"; // 먼저 display를 flex 설정
+			emailDiv.style.display = "none";
+			psDiv.style.display = "none";
+			typedDiv.style.display = "none";
+			aiDiv.style.display = "none";			
+			gsap.to(".ch span ", {
+				duration: 3,				
+				text: {
+					value:"Web Publisher",
+					newClass: "ch__new",
+				},	
+				delay: 1,				
+				repeat: -1,//반복설정 (-)무한
+  				repeatDelay:3,		
+			});
+			
+		}else{
+			gsap.to(chDiv, {duration:0.3,  onComplete: () => {
+				chDiv.style.display = "none"; 
+				typedDiv.style.display = "flex"; 
+			}});
+		}
+	}//
+	document.getElementById("ps").onclick = () => {		
+		if (psDiv.style.display == "none" || psDiv.style.display == "") {			
+			psDiv.style.display = "flex"; 
+			emailDiv.style.display = "none";
+			chDiv.style.display = "none";
+			typedDiv.style.display = "none";
+			aiDiv.style.display = "none";
+			
+			gsap.from(".ps", {
+				duration: 0.8,
+				opacity: 0,
+				scale: 0,
+				y: 80,
+				rotationX: 180,
+				transformOrigin: "0% 50% -50",
+				ease: "back",
+				stagger: 0.01
+			  });
+			  
+		}else{			
+			gsap.to(psDiv, {duration:0.3,  onComplete: () => {
+				psDiv.style.display = "none";
+				typedDiv.style.display = "flex"; 
+			}});
+		}
+	}//
+	
+	document.getElementById("ai").onclick = () => {		
+		if (aiDiv.style.display == "none" || aiDiv.style.display == "") {			
+			aiDiv.style.display = "flex";
+			psDiv.style.display = "none";  
+			emailDiv.style.display = "none";
+			chDiv.style.display = "none";
+			typedDiv.style.display = "none";
+
+			ScrollTrigger.matchMedia({
+				"(min-width: 1200px)":function(){
+				var text_o = new TimelineMax()
+					.to('.text_o',0.5, {width:'30vw',delay:1})
+					.to('.text_o',0.5, {width:'5vw',delay:2})
+					.to('.text_o',0.5, {rotate:'360deg',delay:3})
+					.repeat(-1)
+				},
+				"(max-width: 1200px)":function(){
+				var text_o = new TimelineMax()
+					.to('.text_o',0.5, {width:'22vw',delay:1})
+					.to('.text_o',0.5, {width:'5vw',delay:2})
+					.to('.text_o',0.5, {rotate:'360deg',delay:3})
+					.repeat(-1)
+				}
+				
+			});//matchMedia
+
+		}else{			
+			gsap.to(aiDiv, {duration:0.3,  onComplete: () => {
+				aiDiv.style.display = "none";
+				typedDiv.style.display = "flex"; 
+			}});
+		}
+	}//
+	document.getElementById("ex").onclick = () => {		
+		if (typedDiv.style.display == "none" || typedDiv.style.display == "") {	
+			typedDiv.style.display = "flex";
+			emailDiv.style.display = "none";
+			chDiv.style.display = "none";
+			psDiv.style.display = "none";
+			aiDiv.style.display = "none";
+		}
+	}//
+}); 
+
+//content ani 
+
 //nav Bg
 ScrollTrigger.create({
-  markers:false,
+  //markers:false,
   start:"top 6%",
   trigger:".main__container_1",
   toggleClass:{targets:'nav',className:'nav__active'},
   onUpdate:(self) =>console.log(self)
-})  
-
+}) 
 
 //mousemove
 const cursorParent = document.getElementById("mouse__cursor")
@@ -475,8 +770,8 @@ let stage = ''
 let carouselDirection = ''
 let cursorX = 0, cursorY = 0
 function mousemove(e){
-	cursorX = e.pageX - cursorParent.offsetWidth / 2
-	cursorY = e.pageY - cursorParent.offsetHeight / 2
+	cursorX = e.pageX - cursorParent.offsetWidth + 100
+	cursorY = e.pageY - cursorParent.offsetHeight + 50
 	cursorParent.style.transform=`translate3d(${cursorX}px, ${cursorY}px, 0)`
 
 	switch(e.target.getAttribute('data-cursor')) {        
@@ -507,8 +802,6 @@ function mouseup(e){
     cursorChild.style.setProperty('--cursor-scale', scale)
 }
 
-
-
 gsap.utils.toArray(".section").forEach((section, i) => {
 	gsap.to(section, {
 		scrollTrigger: {
@@ -524,7 +817,6 @@ gsap.utils.toArray(".section").forEach((section, i) => {
 });
 
 //MAIN text
-
 let words = document.querySelectorAll(".change");
 words.forEach(word => {
     let letters = word.textContent.split("");
@@ -561,3 +853,112 @@ let rotateText = () => {
 };
 rotateText();
 setInterval(rotateText, 4000);
+
+
+//about
+$(function(){
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.matchMedia({
+    // 해상도 별 about 스크롤 트리거 디테일 수정
+    // desktop
+    "(min-width: 1200px)":function(){
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: '.about',
+          start: '0% 0%',
+          end: '100% 0%',
+		  markers: false,
+          toggleClass: {targets: ".about .typo__flex", className: "txtMotion"},
+        }
+      })
+
+      const aboutMotion = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.about',
+          start: '-30% 0%',
+          end: '100% 0%',
+          markers: false,
+        },
+        defaults: {
+          yPercent:50, opacity:0,
+          duration: .5,
+        }
+      })
+
+      aboutMotion
+      .from('.about .about__textarea .headline',{})
+      .from('.about .about__textarea .about__text',{})
+    
+     
+    },
+    // 1024 ~ 1199
+    "(min-width: 1024px) and (max-width: 1199px)":function(){
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: '.about',
+          start: '-20% 0%',
+          end: '100% 0%',
+          toggleClass: {targets: ".about .typo__flex", className: "txtMotion"},
+        }
+      })
+    },
+    // tablet
+    "(min-width: 768px) and (max-width: 1023px)":function(){
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: '.about',
+          start: '0% 30%',
+          end: '100% 0%',
+          toggleClass: {targets: ".about .typo__flex", className: "txtMotion"},
+        }
+      })
+
+     const aboutMotion = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.about',
+        start: '-30% 0%',
+        end: '100% 0%'
+        // markers: true,
+      },
+      defaults: {
+        yPercent:50, opacity:0,
+        duration: .5,
+      }
+    })
+
+    aboutMotion
+    .from('.about .about__textarea .headline',{})
+    .from('.about .about__textarea .about__text',{})    
+    },
+    // mobile
+    "(max-width: 767px)":function(){
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: '.about',
+          start: '-30% 40%',
+          end: '100% 0%',
+          toggleClass: {targets: ".about .typo__flex", className: "txtMotion"},
+          markers: false
+        }
+      })
+
+      const aboutMotion = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.about',
+          start: '-30% 40%',
+          end: '100% 0%',
+          markers: false,
+        },
+        defaults: {
+          yPercent:50, opacity:0,
+          duration: .5,
+        }
+      })
+
+      aboutMotion
+      .from('.about .about__textarea .headline',{})
+      .from('.about .about__textarea .about__text',{})
+      
+    }
+  })
+})

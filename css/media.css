@@ -1,36 +1,260 @@
 
-@media all and (min-width:1400px) {
+@media all and (min-width:1400px) {    
+    :root{        
+        --contact__height:550px;
+    }
+    .main__container .article{
+        height: 100vh;
+    }     
+    /*contact*/    
+    .main__container_3 .contact__txt{ 
+        height: var(--contact__height);
+    }
+}
+@media all and (max-width:1400px) {
+    :root{        
+        --contact__height:400px;
+    }
     .main__container .article{
         height: 100vh;
     }
-    body{        
-        font-size: 18px;
-        border: 1px solid #ed3107;
+    /*contact*/    
+    .main__container_3 .contact__txt{ 
+        height: var(--contact__height);
     }
+}
+@media all and (max-width: 1300px) {
+    
+    /*about*/ 
+    .about .typo__area{
+        margin-top: 5rem;
+    }
+    
     
 }
-/* PC (해상도 1024px)*/ 
-@media all and (max-width:1399px) {
-    body{        
-        font-size: 18px;
-        border: 1px solid #d6ed07;
+
+/* Large devices (large desktops) */
+@media all and (max-width: 1200px) {
+    :root{        
+        --contact__height:300px;
+    }
+    /*about*/ 
+    .about .typo__area{
+        margin-top: 3rem;
+    }
+    .about .typo__area .typo__flex {         
+        row-gap: 3.5rem;
+    }  
+    /*contact*/
+    .main__container_3 .contact__txt{ 
+        height: var(--contact__height);
+    }
+    .main__container_3 .contact__typed{
+        font-size:2rem;
+    } 
+}
+@media all and (max-width: 1024px) {
+
+    /*contact*/    
+    .main__container_3 .contact__txt .ai_text{       
+        font-size: 0.5rem;
+    }
+}
+
+@media all and (max-width: 992px) {
+    :root{        
+        --contact__height:260px;
+    }
+    /*main*/   
+    .main__container .main__text{
+        margin: 1rem 0 3rem 0;        
+    }
+    /*project*/
+    .project ul{        
+        padding: 0 5% 5% 5%; 
+        margin: 0 auto;    
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between
+    }
+    .project ul li{
+        width: 45%;       
+        padding: 0;
+        margin: 0;
+    }
+    .project ul li:nth-child(odd){
+        margin-top: 150px;
+    }  
+    .project ul li .project__img{
+        clip-path:inset(0%);
+    }  
+    .project ul li .project__info{        
+        padding: 20px 0  30px 0;
+        opacity: 1;
+    }
+    /*about*/
+    .about .about__textarea .headline {
+        font-size: 4rem;
+    }
+    .about .typo__area .typo__flex {  
+        width: 90%;
+        row-gap: 2.2rem;        
+    } 
+    /*contact*/
+    .main__container_3 .contact::after{        
+        height: 40px;
+    }
+    .main__container_3 .contact__txt{ 
+        height: var(--contact__height);
+    }
+    .main__container_3 .contact__typed{
+        font-size:1.5rem;
+        line-height: 140%;
+    }     
+}
+
+/* Small devices (tablets) */ 
+@media all and (max-width: 768px) {
+    :root{        
+        --contact__height:220px;
+    }
+    /*project*/
+    .project ul{        
+        padding: 5% ; 
+        margin: 0 auto;    
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between
+    }
+    .project ul li{
+        width: 100%;       
+        padding: 0;
+        margin: 0 0 1rem 0;
+    }
+    .project ul li:nth-child(odd){
+        margin-top: 0px;
+    } 
+    
+    /*about*/
+    .about .about__textarea .headline {
+        font-size: 3rem;
+    }
+    .about .about__textarea .about__text {
+        font-size:0.8rem;
+    }
+    .about .typo__area{
+        margin-top: 2rem;
+    }     
+    .about .typo__area .typo__flex {       
+        row-gap: 1.5rem;
+    }
+    /*contact*/
+    .main__container_3 .contact::after{        
+        height: 30px;
+    }
+    .main__container_3 .contact__txt{ 
+        height: var(--contact__height);
     }    
+    .main__container_3 .content{        
+        padding: 10px 10px;    
+    }
+    .main__container_3 .content span{        
+        width: 20px;
+        height: 20px;        
+    }    
+    /*scrollMark*/
+    .scroll__mark{
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        right: 3%;
+        bottom: 5%;
+        z-index: 21;
+    }
+} 
+@media all and (max-width: 640px) {    
+    :root{        
+        --contact__height:180px;
+    }
+    /*contact*/
+    .main__container_3 .contact::after{        
+        height: 20px;
+    }
+    .main__container_3 .contact__txt{ 
+        height: var(--contact__height);
+    }
+    .main__container_3 .contact__typed{
+        font-size:1.2rem;
+    }
     
 } 
-
-
-
-/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
-@media all and (min-width:480px) and (max-width:767px) {
-    body{
-        border: 1px solid #de0eb1;
+@media all and (max-width:576px) {    
+    :root{        
+        --contact__height:150px;
+    }  
+    /*main*/   
+    .main__container .main__text{
+        margin: 0.5rem 0 0.5rem 0;        
     }
-} 
-
-/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
-@media all and (max-width:479px) {
-    body{
-        font-size: 12px;
-        border: 1px solid #dec20e;
+    /*work*/
+    .main__container_1 .work__area .work__txt .headline{
+        font-size: 1.5rem;
     }
+    .main__container_1 .work__area .work__txt .txt{
+        font-size:0.5rem;
+    }
+    /*about*/
+    .about .about__textarea .headline {
+        font-size: 1.5rem;
+    }
+    .about .about__textarea .about__text {
+        width: 90%;
+        font-size:0.5rem;
+    }
+    .about .typo__area{        
+        margin-top: 1rem;
+    }     
+    .about .typo__area .typo__flex {        
+        row-gap: 0.8rem;
+    }
+    .about .typo__area .typo__flex .typo__txt {        
+        margin: 0 0.4rem;
+    } 
+    /*contact*/    
+    .main__container_3 .contact__txt{ 
+        height: var(--contact__height);
+    }
+    .main__container_3 .contact__typed{
+        font-size:1rem;
+    } 
+         
+    
+}
+
+@media all and (max-width:360px) {
+    /*main*/    
+    .main__container .main__text{ 
+        margin: 0.5rem 0 0rem 0; 
+    }    
+    /*about*/    
+    .about .typo__area .typo__flex {            
+        row-gap: 0.8rem;        
+    }
+    /*contact*/    
+    .main__container_3 .contact{        
+        width: 80%;            
+    }
+    .main__container_3 .contact::after{        
+        display: none;
+    }
+    
+    .main__container_3 .contact__typed{    
+        color: #fff;
+        font-size:1rem;
+        font-family: 'Chosunilbo_myungjo';    
+    }
+    
+      
+   
+      
 }

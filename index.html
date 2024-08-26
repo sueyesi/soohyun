@@ -3,42 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/jquery.scrolla.js"></script>
     <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css"> 
     <link rel="stylesheet" href="css/media.css">    
-    <title>portfolio</title>
+    <title>Publisher Portfolio</title>
 </head>
-<body>    
-   
+<body>
     <section class="main__container" id="section__1">
-        <article class="article">
+        <article>
             <div class="contents">
                 <h1 data-scroll>Portfolio</h1> 
                 <div class="main__text">
                     <p data-scroll>WEB</p>                     
                     <p class="text__change">
-                        <span class="change alizarin">Publisher</span>
-                        <span class="change wisteria">Designer</span>
+                        <span class="change publisher">Publisher</span>
+                        <span class="change designer">Designer</span>
                     </p>
                 </div>
-                <h2 class="text__etc" id="simpleUsage"></h2>                
+                <div class="text__etc" id="simpleUsage"></div>                
             </div>
             <div class="svgDiv" id="svgDivFirst"></div>                                  
         </article>
     </section>
     <section class="main__container_1" id="section__2">
-        <article class="ani__area ">
+        <article class="work__area">
             <span class="portfolio "></span>
-            <div class="">
-                <h1 class="">Experienced</h1> 
-                <a href="#" data-cursor="link" data-name="work">dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddfaedfawefraqwerfw efr</a>
+            <div class="work__txt">
+                <h2 class="headline">project</h2> 
+                <div class="txt">
+                   아래 포트폴리오 외에 다수의 프로젝트 경험을 가지고 있습니다. 
+                </div>
             </div>               
             <div class="svgDiv" id="svgDivSecond"></div> 
         </article>
@@ -46,88 +48,229 @@
     <section class="main__container_4" id="section__3">
         <article class="project">
             <ul>
-                <li>
-                    <a href="#">
-                        <div class="project__img"><img src="/images/pro01.jpg" alt="title"></div>
-                        <div class="project__info">
-                            <p class="project__title">site name</p>
-                            <p class="project__text">UI/UX design, Web Publishing</p>                        
-                        </div>                    
-                    </a>
+                <li>                    
+                    <div class="project__img" ><img src="/images/pro02.jpg"></div>
+                    <div class="project__info">
+                        <p class="project__title"><a href="#">WEB FERENCE</a></p>
+                        <p class="project__text">Design - 100%, Publishing - 100%</p>
+                        <a class="project__link" href="http://ex2.web-ference.com/" target="_blank" data-cursor="link" data-name="click" >+</a>                       
+                    </div> 
+                </li>
+                <li>                    
+                    <div class="project__img"><img src="/images/pro01.jpg" alt="title"></div>
+                    <div class="project__info">
+                        <p class="project__title"><a href="#">(사)한국문화재보존과학회</a></p>
+                        <p class="project__text">Design - 100%, Publishing - 100%</p>
+                        <a class="project__link" href="https://conservation.or.kr/" target="_blank" data-cursor="link" data-name="click" >+</a>                       
+                    </div> 
+                </li>
+                <li>                    
+                    <div class="project__img"><img src="/images/pro08.jpg" alt="title"></div>
+                    <div class="project__info">
+                        <p class="project__title">한국재무학회</p>
+                        <p class="project__text">Design - 100%, Publishing - 100%</p>                        
+                    </div> 
+                </li>
+                <li>                    
+                    <div class="project__img"><img src="/images/pro03.jpg" alt="title"></div>
+                    <div class="project__info">
+                        <p class="project__title">KSFE</p>
+                        <p class="project__text">Design - 100%, Publishing - 100%</p> 
+                        <a class="project__link" href="http://www.ksfe.kr/" target="_blank" data-cursor="link" data-name="click" >+</a>                     
+                    </div>
+                </li>
+                <li>                    
+                    <div class="project__img"><img src="/images/pro04.jpg" alt="title"></div>
+                    <div class="project__info">
+                        <p class="project__title">KAFAS</p>
+                        <p class="project__text">Design - 100%, Publishing - 100%</p>  
+                        <a class="project__link" href="http://www.kafas.or.kr/" target="_blank" data-cursor="link" data-name="click" >+</a>                      
+                    </div> 
                 </li>
                 <li>
-                    <a href="#">
-                        <div class="project__img"><img src="/images/pro02.jpg" alt="title"></div>
-                        <div class="project__info">
-                            <p class="project__title">site name</p>
-                            <p class="project__text">UI/UX design, Web Publishing</p>                        
-                        </div>                    
-                    </a>
+                    <div class="project__img"><img src="/images/pro05.jpg" alt="title"></div>
+                    <div class="project__info">
+                        <p class="project__title">한독문학번역연구소</p>
+                        <p class="project__text">Design - 100%, Publishing - 100%</p> 
+                        <a class="project__link" href="http://www.kodetrans.or.kr/intro.php" target="_blank" data-cursor="link" data-name="click" >+</a>                     
+                    </div>  
                 </li>
-                <li>
-                    <a href="#">
-                        <div class="project__img"><img src="/images/pro02.jpg" alt="title"></div>
-                        <div class="project__info">
-                            <p class="project__title">site name</p>
-                            <p class="project__text">UI/UX design, Web Publishing</p>                        
-                        </div>                    
-                    </a>
+                <li>                    
+                    <div class="project__img"><img src="/images/pro06.jpg" alt="title"></div>
+                    <div class="project__info">
+                        <p class="project__title">KOSAS</p>
+                        <p class="project__text">Design - 100%, Publishing - 100%</p> 
+                        <a class="project__link" href="http://www.kosas.or.kr/" target="_blank" data-cursor="link" data-name="click" >+</a>                      
+                    </div> 
                 </li>
-                <li>
-                    <a href="#">
-                        <div class="project__img"><img src="/images/pro02.jpg" alt="title"></div>
-                        <div class="project__info">
-                            <p class="project__title">site name</p>
-                            <p class="project__text">UI/UX design, Web Publishing</p>                        
-                        </div>                    
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="project__img"><img src="/images/pro02.jpg" alt="title"></div>
-                        <div class="project__info">
-                            <p class="project__title">site name</p>
-                            <p class="project__text">UI/UX design, Web Publishing</p>                        
-                        </div>                    
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="project__img"><img src="/images/pro02.jpg" alt="title"></div>
-                        <div class="project__info">
-                            <p class="project__title">site name</p>
-                            <p class="project__text">UI/UX design, Web Publishing</p>                        
-                        </div>                    
-                    </a>
+                <li>                    
+                    <div class="project__img"><img src="/images/pro07.jpg" alt="title"></div>
+                    <div class="project__info">
+                        <p class="project__title">KORIIS</p>
+                        <p class="project__text">Design - 100%, Publishing - 100%</p>
+                        <a class="project__link" href="https://koriis.kr/" target="_blank" data-cursor="link" data-name="click" >+</a>                        
+                    </div> 
                 </li>
             </ul>
         </article>
     </section>
-    <section class="main__container_2 animate" data-animate="motion" id="section__3">
-        <article class="work">
-            <div class="work__contents">
-                <div class="work__textarea">
-                    <p class="work__title">my<span>work</span></p>
-                    <p class="work__text">
-                        To use the ease visualizer, simply click on the ease name that you'd like to use. You can also click on the underlined text to change the values and type of ease.
-    Use the navigation links in the menu to the left for more information about complex eases.
-                    </p>                    
-                </div>               
+    <section class="main__container_2 " id="section__3">
+        <article>
+        <div class="about">  
+        <div class="about__textarea">
+            <div class="typo__flex">
+              <h2 class="headline" >Experienced</h2>
+            </div>    
+            <p class="about__text">
+                If you don’t know, until you do<br/>
+                스스로에게 한계를 두지 않고 끊임없이 나아가고 싶습니다. <br/>
+                경험에 트렌드를 더할 수 있도록
+                다양한 프레임워크와 학습도 꾸준히 하고 있습니다.       
+            </p>
+          </div>
+        <div class="typo__area">
+          <div class="typo__flex">            
+            <div class="typo__txt split-w">
+              <span class="word thin text__circle">
+                <span class="word__split motion__scale">긍</span>
+                <span class="word__split motion__scale">정</span>
+                <span class="word__split motion__scale">적</span>
+                <span class="word__split motion__scale">인</span>
+              </span>
             </div>
-            <div class="svgDiv" id="svgDivThird"></div>  
-        </article>        
-    </section>    
+            <div class="typo__txt">
+              <span class="word  slide__right color__p1">CSS3</span>
+            </div>           
+            <div class="typo__txt regular">
+                <span class="word slide__down bold text__font">웹 접근성</span>
+            </div> 
+            <div class="typo__txt thin color__p1">
+                <span class="word slide__down">UI/UX</span>
+            </div>          
+            <div class="typo__txt thin split-w">
+                <span class="word">               
+                  <span class="word__split motion__scale">책</span>
+                  <span class="word__split motion__scale">임</span>
+                  <span class="word__split motion__scale">감</span>              
+                </span>
+            </div>            
+            <div class="typo__txt thin__e split-w">
+              <span class="word slide__right en">Photoshop</span>
+            </div> 
+            <div class="typo__txt split-w ">
+                <span class="word thin__e text__font3">
+                  <span class="word__split motion__scale">T</span>
+                  <span class="word__split motion__scale">R</span>
+                  <span class="word__split motion__scale">E</span>
+                  <span class="word__split motion__scale">N</span>
+                  <span class="word__split motion__scale">D</span>
+                </span>
+              </div>                      
+            <div class="typo__txt">
+              <span class="word slide__down en em"><strong>Illustrator</strong></span>
+            </div>            
+            <div class="typo__txt thin__e split-w">
+                <span class="word color__p1">
+                    <span class="word__split motion__scale">H</span>
+                    <span class="word__split motion__scale">t</span>
+                    <span class="word__split motion__scale">m</span>
+                    <span class="word__split motion__scale">l</span>
+                    <span class="word__split motion__scale">5</span>
+                </span>
+            </div>  
+            <div class="typo__txt split-w">
+                <span class="word thin__e">
+                  <span class="word__split motion__scale">g</span>
+                  <span class="word__split motion__scale">s</span>
+                  <span class="word__split motion__scale">a</span>
+                  <span class="word__split motion__scale">p</span>
+                </span>
+              </div>
+            <div class="typo__txt">
+              <span class="word slide__right text__font4">
+                <strong>vscode</strong></span>
+            </div>
+            <div class="typo__txt thin__e split-w">
+                <span class="word">
+                  <span class="word__split motion__scale">J</span>
+                  <span class="word__split motion__scale">a</span>
+                  <span class="word__split motion__scale">v</span>
+                  <span class="word__split motion__scale">a</span>
+                  <span class="word__split motion__scale">s</span>
+                  <span class="word__split motion__scale">c</span>
+                  <span class="word__split motion__scale">r</span>
+                  <span class="word__split motion__scale">i</span>
+                  <span class="word__split motion__scale">p</span>
+                  <span class="word__split motion__scale">t</span>
+                </span>
+              </div> 
+            <div class="typo__txt thin__e">
+                <span class="word slide__up color__p1">반응형</span>
+            </div>
+            <div class="typo__txt thin__e split-w">
+                <span class="word slide__right en">TypeIt</span>
+            </div>
+            <div class="typo__txt regular">
+                <span class="word slide__up">열정</span>
+            </div>
+        </div>
+    </div>  
+    </div> 
+      <div class="svgDiv" id="svgDivThird"></div>   
+    </article>
+    </section>   
     <section class="main__container_3"  id="section__4">
         <article>   
-            <div class="">                
-                <p class="text__end" id="endText"></p> 
+            <div class="contact">
+                <div class="contact__txt">              
+                    <div class="contact__typed" id="contactTyped"></div>
+                    <p class="email">
+                        publisher724@gmail.com  
+                        <span class="ani"></span>                      
+                    </p>
+                    <p class="ch">
+                        <span>THANK YOU</span>
+                    </p> 
+                    <p class="ps">
+                        유연한 태도로 즐겁게 일하며 <br/>커뮤니케이션은 업무에서 가장 중요하다고 생각합니다. 
+                        
+                    </p> 
+                    <p class="ai">
+                        <span class="text_p">P</span>           
+                        <span class="text_o">
+                            <span class="ai_text">soo hyun</span>
+                        </span> 
+                        <span class="text_r">S</span>
+                        <span class="text_i">i</span>  
+                        <span class="text_t">t</span>  
+                        <span class="text_i">i</span>  
+                        <span class="text_v">v</span> 
+                        <span class="text_e">e</span>                              
+                    </p>                                      
+                </div>
+                <div class="content">
+                    <span id="ex" data-cursor="link" data-name="click"></span>
+                    <span id="ch" data-cursor="link" data-name="click"></span>
+                    <span id="ai" data-cursor="link" data-name="click"></span>
+                    <span id="ps" data-cursor="link" data-name="click"></span>
+                    <span id="fz"></span>
+                    <span id="vs"></span>
+                    <span id="email" data-cursor="link" data-name="email"></span>
+                </div> 
             </div>   
             <div class="svgDiv" id="svgDivFourth"></div> 
         </article>
     </section>
+    <footer>© 2024 SUEYESI_SOOHYUN</footer>    
     <div id="mouse__cursor">
         <div></div>
+    </div> 
+    <div class="scroll__mark" >
+        <img class="spin" src="images/cursor_spin.png">
+        <img class="arrow" src="images/cursor_arrow.png">
+        <span  class="link" data-cursor="link" data-name="Top"></span>
     </div>    
-    <script  src="js/common.js"></script>    
+    <script  src="js/common.js"></script>  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
 </body>
 </html>
