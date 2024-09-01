@@ -463,14 +463,24 @@ section article{
     font-weight: 100;
     color: rgba(255, 255, 255, 0.6);
 }
-.project ul li .project__info .project__link{
-    width: 50%;
+.project ul li .project__info .project__link{   
+    width: 100%;
     margin: 0 auto;
     display: block;
-    color: #fff;
-    padding:5px 10px;
-    font-size: 1.2rem;
-    color: #f2fddb;
+    color:rgba(255, 255, 255, 0.3);
+    padding:20px 10px;
+    font-size:1.2rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: right;
+}
+.project ul li .project__info a.project__link i{   
+    transition: 0.3s ease-out;
+}
+.project ul li .project__info a.project__link:hover i{   
+    transform:rotate(360deg) !important;   
+    color:rgba(255, 255, 255, 0.9);
 }
 /*work hover
 .project ul li .project__img::before{
@@ -855,9 +865,28 @@ footer {
     text-align: center;
     padding: 20px  0;
     text-align: center;    
-    font-size: 0.6rem;
-  }
-
+    font-size: 0.9rem;
+}
+footer ul{
+    width: 100%;
+    display: flex;
+    justify-content: center
+}
+footer ul li{      
+    list-style: none;
+    margin: 0 20px;    
+}
+footer ul li.kakao{
+    background: url(../images/icon_kakao.png) no-repeat;
+    background-size: 25px 25px;
+}
+footer ul li.email{
+    background: url(../images/icon_gmail.png) no-repeat;
+    background-size: 25px 25px;
+}
+footer ul li span{
+   padding-left: 30px;
+}
 
 
 
